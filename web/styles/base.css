@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --font-roboto: 'Roboto', sans-serif;
+  --bg-color: #121214;
+  --bg-input: #202024;
+  --tt-primary: #FFFFFF;
+  --tt-secondary: #7C7C8A;
+  --bg-button: #8257E5;
+  --bg-button-hover: #633BBC;
+}
+
+body {
+  font-family: var(--font-roboto);
+  font-size: 1.6rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  color: var(--tt-primary);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6.4rem;
+}
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: var(--bg-button);
+  line-height: 100%;
+}
+
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+#url {
+  padding: 1.6rem 34.6rem 1.6rem 1.2rem;
+  background: var(--bg-input);
+  color: var(--tt-primary);
+  border: none;
+  border-radius: .5rem;
+}
+
+#url:focus {
+  outline: 1px solid var(--bg-button);
+}
+
+#form button {
+  padding: 1.2rem;
+  background: var(--bg-button);
+  border-radius: .5rem;
+  color: var(--tt-primary);
+  font-size: 2.4rem;
+  border: none;
+  transition: background-color .3s ease;
+}
+
+#form button:hover {
+  background: var(--bg-button-hover);
+  cursor: pointer;
+}
+
+#resume {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.8rem;
+  text-align: justify;
+}
+
+#resume p {
+  width: 51.2rem;
+  text-align: justify;
+}
+
+.placeholder {
+  color: var(--tt-secondary);
+  user-select: none;
+}

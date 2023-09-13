@@ -95,6 +95,7 @@ body {
 }
 
 #resume {
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

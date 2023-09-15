@@ -1,1 +1,5 @@
-import "./styles/base.css"
+//JS
+import "./form";
+
+//CSS
+import "./styles/base.css";

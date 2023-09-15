@@ -68,7 +68,8 @@ body {
 }
 
 #url {
-  padding: 1.6rem 34.6rem 1.6rem 1.2rem;
+  width: 46rem;
+  padding: 1.6rem 1.2rem 1.6rem 1.2rem;
   background: var(--bg-input);
   color: var(--tt-primary);
   border: none;

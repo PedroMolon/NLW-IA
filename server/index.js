@@ -1,15 +1,39 @@
 import cors from 'cors'
 import express from 'express'
 
-import { download } from './download.js'
+import { convert } from './convert.js';
+import { download } from './download.js';
+import { transcribe } from './transcribe.js';
+import { summarize } from './summarize.js';
 
 const app = express();
+app.use(express.json());
 app.use(cors())
 
-app.get("/summary/:id", (request, response) => {
-  const { id } = request.params;
-  download(id);
-  response.json({ result: "Download do vídeo realizado com sucesso! "});
+app.get("/summary/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+    await download(id);
+    const audioConverted = await convert();
+    console.log(audioConverted);
+
+    const result = await transcribe(audioConverted);
+
+    return response.json({ result });
+  } catch(error) {
+    console.log(error);
+    return response.json({ error });
+  }
+})
+
+app.post("/summary", async (request, response) => {
+  try {
+    const result = await summarize(request.body.text);
+    return response.json({ result });
+  } catch(error) {
+    console.log(error);
+    return response.json({ error });
+  }
 })
 
 const PORT = 3000;
